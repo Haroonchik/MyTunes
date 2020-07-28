@@ -64,4 +64,14 @@
 
     font-weight: 700;
   }
+
+  &-sound {
+    width: 20px;
+  }
+
+  &-volume {
+    width: 80px !important;
+    margin: 20px !important;
+    margin-left: 5px !important;
+  }
 }
