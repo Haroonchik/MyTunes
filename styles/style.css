@@ -212,6 +212,8 @@ main {
       border-radius: 50%;
       width: 100%;
       height: 100%; }
+  .radio-footer {
+    display: flex; }
   .radio-stop {
     background-color: transparent;
     border: none;
@@ -220,6 +222,12 @@ main {
     .radio-stop:disabled {
       color: #aaa;
       opacity: .3; }
+  .radio-sound {
+    width: 56px !important;
+    margin-left: 40%;
+    margin-right: 15px; }
+  .radio-volume {
+    width: 150px !important; }
 
 .audio {
   display: flex;
@@ -470,5 +478,3 @@ input[type=range]:focus::-ms-fill-upper {
 
 .red-text {
   color: #F51E38; }
-  .red-text-kek {
-    color: red; }

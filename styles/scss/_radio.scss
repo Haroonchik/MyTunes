@@ -133,6 +133,9 @@
     }
   }
 
+  &-footer{
+    display: flex;
+  }
 
   &-stop {
     background-color: transparent;
@@ -144,5 +147,15 @@
       color: #aaa;
       opacity: .3;
     }
+  }
+
+  &-sound {
+    width: 56px !important;
+    margin-left: 40%;
+    margin-right: 15px;
+  }
+
+  &-volume {
+    width:150px !important;
   }
 }
