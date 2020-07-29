@@ -141,6 +141,7 @@
     background-color: transparent;
     border: none;
     font-size: 56px;
+    min-width: 60px !important;
     color: #fff;
 
     &:disabled {
@@ -150,8 +151,9 @@
   }
 
   &-sound {
-    width: 56px !important;
-    margin-left: 40%;
+    font-size: 56px !important;
+    min-width: 56px !important;
+    margin-left: 37%;
     margin-right: 15px;
   }
 

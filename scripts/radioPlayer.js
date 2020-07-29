@@ -1,17 +1,24 @@
+const radio = document.querySelector('.radio');
+const radioCoverImg = document.querySelector('.radio-cover__img');
+const radioNavigation = document.querySelector('.radio-navigation');
+const radioHeaderBig = document.querySelector('.radio-header__big');
+const radioItem = document.querySelectorAll('.radio-item');
+const radioStop = document.querySelector('.radio-stop');
+const radioVolume = document.querySelector('.radio-volume');
+const radioSound = document.querySelector('.radio-sound');
+const audio = new Audio();
+
+
 export const radioPlayerInit = () => {
-
-   const radio = document.querySelector('.radio');
-   const radioCoverImg = document.querySelector('.radio-cover__img');
-   const radioNavigation = document.querySelector('.radio-navigation');
-   const radioHeaderBig = document.querySelector('.radio-header__big');
-   const radioItem = document.querySelectorAll('.radio-item');
-   const radioStop = document.querySelector('.radio-stop');
-   const radioVolume = document.querySelector('.radio-volume');
-
-   const audio = new Audio();
    audio.type = 'audio/aac';
 
    radioStop.disabled = true;
+
+   radioSound.addEventListener('click', () => {
+    audio.volume = 0;
+    audio.value = 0;
+    radioSound.classList.replace('fa-volume-up','fa-volume-off');
+})
 
     const changeIconPlay = () => {
         if (audio.paused){
@@ -57,10 +64,19 @@ export const radioPlayerInit = () => {
        changeIconPlay();
    })
 
-   radioVolume.addEventListener('change', () => {
+   radioVolume.addEventListener('input', () => {
         const value = radioVolume.value;
         audio.volume = value / 10;
+        if (value > 0){
+            radioSound.classList.replace('fa-volume-off','fa-volume-up');
+        }else{
+            radioSound.classList.replace('fa-volume-up','fa-volume-off');
+        }
    });
 
+}
+
+export const radioPlayerStop = () => {
+    audio.pause();
 }
 

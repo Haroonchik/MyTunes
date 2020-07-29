@@ -1,4 +1,5 @@
 import { radioPlayerInit } from './radioPlayer.js';
+import { radioPlayerStop } from './radioPlayer.js';
 import { videoPlayerInit } from './videoPlayer.js';
 import { musicPlayerInit } from './musicPlayer.js';
 
@@ -11,6 +12,7 @@ const deactivationPlayer = () => {
     temp.style.display = 'none';
     playerBtn.forEach(item => item.classList.remove('active'));
     playerBlock.forEach(item => item.classList.remove('active'));
+    radioPlayerStop();
 }
 
 //функция для показа плееров 
