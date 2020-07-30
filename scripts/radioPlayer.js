@@ -14,11 +14,6 @@ export const radioPlayerInit = () => {
 
    radioStop.disabled = true;
 
-   radioSound.addEventListener('click', () => {
-    audio.volume = 0;
-    audio.value = 0;
-    radioSound.classList.replace('fa-volume-up','fa-volume-off');
-})
 
     const changeIconPlay = () => {
         if (audio.paused){
@@ -62,7 +57,7 @@ export const radioPlayerInit = () => {
            audio.pause();
        }
        changeIconPlay();
-   })
+   });
 
    radioVolume.addEventListener('input', () => {
         const value = radioVolume.value;
@@ -74,9 +69,29 @@ export const radioPlayerInit = () => {
         }
    });
 
+   let value = radioVolume.value;
+   let volume = audio.volume;
+   radioSound.addEventListener('click', () => {
+    if (radioVolume.value == 0){
+        audio.volume = volume;
+        radioVolume.value = value;
+        radioSound.classList.replace('fa-volume-off','fa-volume-up');
+    }else{
+        value = radioVolume.value;
+        volume = audio.volume;
+        audio.volume = 0;
+        radioVolume.value = 0;
+        radioSound.classList.replace('fa-volume-up','fa-volume-off');
+    }
+    
+    });
+
 }
 
 export const radioPlayerStop = () => {
     audio.pause();
+    radio.classList.remove('play');  // остановка анимации
+    radioStop.classList.add('fa-play');
+    radioStop.classList.remove('fa-stop');
 }
 

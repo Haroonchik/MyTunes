@@ -324,6 +324,12 @@ main {
   @media (max-width: 650px) {
     .audio-footer {
       height: 120px; } }
+  .audio-sound {
+    font-size: 24px !important;
+    margin-right: 10px !important;
+    min-width: 30px !important; }
+  .audio-volume {
+    width: 100px !important; }
 
 input[type=range] {
   -webkit-appearance: none;
